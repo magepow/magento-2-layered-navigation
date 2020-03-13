@@ -1,0 +1,54 @@
+<?php if ($block->canShowBlock()): ?>
+    <div class="block filter" id="layerednav-filter-block" data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } }}'>
+        <div class="block-title filter-title">
+            <strong data-role="title" role="tab" aria-selected="true" aria-expanded="true" tabindex="0"><?= /* @escapeNotVerified */ __('Shop By') ?></strong>
+        </div>
+        <div class="block-content filter-content sidebar-shop sidebar-left">
+            <?php if ($block->getLayer()->getState()->getFilters()): ?>
+                <?php echo $block->getChildHtml('state') ?>
+                <div class="block-actions filter-actions">
+                    <a href="<?php /* @escapeNotVerified */ echo $block->getClearUrl() ?>" class="action clear filter-clear"><span><?php /* @escapeNotVerified */ echo __('Clear All') ?></span></a>
+                </div>
+            <?php endif; ?>
+            <?php $wrapOptions = false;
+            $activeKey = 0; $activeArray = []; ?>
+            <?php foreach ($block->getFilters() as $key => $filter): ?>
+        <?php if ($filter->getItemsCount()): ?>
+        <?php if (!$wrapOptions): ?>
+            <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= /* @escapeNotVerified */ __('Shopping Options') ?></strong>
+            <div class="filter-options widget widget-filter" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "multipleCollapsible": true}}'>
+                <?php  $wrapOptions = true; endif; ?>
+                <?php 
+                //if($filter->getName() == 'Price'): ?>
+                <div data-role="collapsible" class="filter-options-item">
+                    <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __($filter->getName()) ?></div>
+                    <div data-role="content" class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></div>
+                </div>
+                <?php
+                //endif;
+                $activeArray[] = $activeKey;
+                $activeKey++;
+                ?>
+                <?php endif; ?>
+                <?php endforeach; ?>
+                <?php if ($wrapOptions): ?>
+            </div>
+            <script type="text/x-magento-init">
+                {
+                    "#narrow-by-list": {
+                        <?php if($this->helper('Magepow\Layerednav\Helper\Data')->isEnabledShowAllFilters()): ?>
+                            "accordion": {
+                                "active": <?php echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($activeArray); ?>
+                            },
+                        <?php endif; ?>
+                        "Magepow_Layerednav/js/layerednav": {}
+                    }
+                }
+            </script>
+        <?php endif; ?>
+        </div>
+        <div id="layered_overlay" class="layered_overlay">
+            <div><img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>" alt="<?php echo __('Loading') ?>"></div>
+        </div>
+    </div>
+<?php endif; ?>

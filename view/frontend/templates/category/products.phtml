@@ -1,0 +1,12 @@
+<?php if (!$block->isContentMode() || $block->isMixedMode()): ?>
+    <div id="layerednav-list-products">
+        <?php echo $block->getProductListHtml() ?>
+    </div>
+    <script type="text/x-magento-init">
+		{
+			".quickview-product [data-role=quickview-button]": {
+				"productQuickview": {}
+			}
+		}
+	</script>
+<?php endif; ?>

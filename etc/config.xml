@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Magepow
+  ~  * @category    Magepow
+  ~  * @copyright   Copyright (c) 2014 Magepow (http://www.magepow.com/)
+  ~  * @license     http://www.magepow.com/license-agreement.html
+  ~  * @Author: DavidDuong
+  ~  * @@Create Date: 4/16/19 2:24 PM
+  ~  * @@Modify Date: 4/16/19 2:24 PM
+  ~  */
+  ~
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <layered_ajax>
+            <general>
+                <enable>1</enable>
+                <price_slider>1</price_slider>
+                <show_filters>1</show_filters>
+            </general>
+        </layered_ajax>
+    </default>
+</config>

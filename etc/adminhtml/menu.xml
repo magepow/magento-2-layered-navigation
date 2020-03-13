@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="magepow" title="MagePow" module="Magepow_Layerednav" sortOrder="10" resource="Magepow_Layerednav::magepow"/>
+
+        <add id="Magepow_Layerednav::magepow" title="Layered Ajax" module="Magepow_Layerednav" sortOrder="10" parent="magepow" resource="Magepow_Layerednav::magepow"/>
+
+        <add id="Magepow_Layerednav::layered_ajax" title="Layered Ajax Settings" module="Magepow_Layerednav" sortOrder="10" parent="Magepow_Layerednav::magepow" action="adminhtml/system_config/edit/section/layered_ajax" resource="Magepow_Layerednav::magepow" />
+    </menu>
+</config>

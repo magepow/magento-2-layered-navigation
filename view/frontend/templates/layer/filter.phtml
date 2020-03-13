@@ -1,0 +1,67 @@
+<ol class="items">
+    <?php 
+        $blockObj= $block->getLayout()->createBlock('Magepow\Layerednav\Block\Layerednav');
+        $RangePrice = $blockObj->getCurrentCategoryMaxPrice();
+    ?>
+    <?php foreach ($filterItems as $filterItem): ?>
+        <?php
+        $filter = $filterItem->getFilter();
+        $attributeModel = $filter->getData('attribute_model');
+        $inputName = $filter->getRequestVar();
+        $requestValue = $block->getRequest()->getParam($inputName);
+        $requestArray = $requestValue ? explode(',', $requestValue) : [];
+        $url = in_array($filterItem->getValue(), $requestArray) ? $filterItem->getRemoveUrl() : $filterItem->getUrl();
+        ?>
+        <li class="item">
+            <?php if($this->helper('Magepow\Layerednav\Helper\Data')->isEnabledPriceRangeSliders() && $attributeModel && $attributeModel->getFrontendInput() == 'price'): ?>
+                <?php
+                $min = $RangePrice['min'];
+                $max = $RangePrice['max'];
+
+                list($from, $to) = $requestValue ? explode('-', $requestValue) : [$min, $max];
+                ?>
+                <div id="layered_ajax_price_attribute">
+                    <div id="layered_ajax_price_text"></div>
+                    <div id="layerednav_price_slider"></div>
+                </div>
+                <script type="text/x-magento-init">
+                    {
+                        "#layered_ajax_price_attribute": {
+                            "Magepow_Layerednav/js/priceslider": {
+                                "selectedFrom": <?php echo $from ?>,
+                                "selectedTo": <?php echo $to ?>,
+                                "minValue": <?php echo $RangePrice['min']; ?>,
+                                "maxValue": <?php echo $RangePrice['max']; ?>,
+                                "priceFormat": <?php echo $this->helper('Magento\Tax\Helper\Data')->getPriceFormat($block->getStore()); ?>,
+                                "ajaxUrl": <?php echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($filterItem->getUrl()) ?>
+                            }
+                        }
+                    }
+                </script>
+            <?php break; ?>
+            <?php else: ?>
+            <?php if ($filterItem->getCount() > 0): ?>
+                <a <?php echo in_array($filterItem->getValue(), $requestArray) ? 'class="active"' : ''  ?> href="<?php echo $block->escapeUrl($url) ?>">
+                    <?php if($attributeModel && $attributeModel->getFrontendInput() == 'multiselect'): ?>
+                        <input type="checkbox" <?php echo in_array($filterItem->getValue(), $requestArray) ? 'checked="checked"' : ''  ?> />
+                    <?php endif; ?>
+                    <?php echo $filterItem->getLabel() ?>
+                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                        <span class="count"><?php echo $filterItem->getCount()?><span class="filter-count-label">
+								<?php if ($filterItem->getCount() == 1):?> <?php echo __('item')?><?php else:?> <?php echo __('items') ?><?php endif;?></span></span>
+                    <?php endif; ?>
+                </a>
+            <?php else:?>
+                <?php if($attributeModel && $attributeModel->getFrontendInput() == 'multiselect'): ?>
+            <input type="checkbox" disabled="disabled" />
+            <?php endif; ?>
+                <?php echo $filterItem->getLabel() ?>
+                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                <span class="count"><?php echo $filterItem->getCount()?><span class="filter-count-label">
+							<?php if ($filterItem->getCount() == 1):?><?php echo __('item')?><?php else:?><?php echo __('items') ?><?php endif;?></span></span>
+            <?php endif; ?>
+            <?php endif; ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>

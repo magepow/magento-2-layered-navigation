@@ -1,0 +1,60 @@
+<?php
+/**
+ * *
+ *  * Magepow
+ *  * @category    Magepow
+ *  * @copyright   Copyright (c) 2014 Magepow (http://www.magepow.com/)
+ *  * @license     http://www.magepow.com/license-agreement.html
+ *  * @Author: DavidDuong
+ *  * @@Create Date: 4/16/19 3:12 PM
+ *  * @@Modify Date: 4/16/19 3:12 PM
+ *
+ *
+ */
+
+?>
+<?php
+/**
+ * Category layered navigation state
+ *
+ * @var $block \Magento\LayeredNavigation\Block\Navigation\State
+ */
+?>
+<?php $_filters = $block->getActiveFilters() ?>
+<?php if (!empty($_filters)): ?>
+    <div class="filter-current"  data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": true }}'>
+        <strong class="block-subtitle filter-current-subtitle widget-title"
+            role="heading"
+            aria-level="2"
+            data-role="title"
+            data-count="<?php echo count($_filters); ?>"><?php /* @escapeNotVerified */ echo __('Now Shopping by') ?></strong>
+        <ol class="items">
+            <?php foreach ($_filters as $_filter): ?>
+                <li class="item">
+                    <span class="filter-label"><?php echo $block->escapeHtml(__($_filter->getName())); ?></span>
+                    <span class="filter-value"><?php /* @escapeNotVerified */ echo $block->stripTags($_filter->getLabel()) ?></span>
+                    <?php
+                    $clearLinkUrl = $_filter->getClearLinkUrl();
+                    $currentFilterName = $block->escapeHtml(__($_filter->getName())) . " " . $block->stripTags($_filter->getLabel());
+                    if ($clearLinkUrl):
+                        ?>
+                        <a class="action previous" href="<?php /* @escapeNotVerified */ echo $_filter->getRemoveUrl() ?>"
+                           title="<?php /* @escapeNotVerified */ echo __('Previous') ?>">
+                            <span><?php /* @escapeNotVerified */ echo __('Previous') ?></span>
+                        </a>
+                        <a class="action remove"
+                           title="<?php echo $block->escapeHtml($_filter->getFilter()->getClearLinkText()) ?>"
+                           href="<?php /* @escapeNotVerified */ echo $clearLinkUrl ?>">
+                            <span><?php echo $block->escapeHtml($_filter->getFilter()->getClearLinkText()) ?></span>
+                        </a>
+                    <?php else: ?>
+                        <a class="action remove" href="<?php /* @escapeNotVerified */ echo $_filter->getRemoveUrl() ?>"
+                           title="<?php /* @escapeNotVerified */ echo $block->escapeHtml(__('Remove')) . " " . $currentFilterName;?>">
+                            <span><i class="fa fa-times" aria-hidden="true"></i></span>
+                        </a>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+<?php endif; ?>

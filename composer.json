@@ -1,0 +1,27 @@
+{
+  "name": "magepow/layerednav",
+  "description": "N/A",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "autoload": {
+    "files": ["registration.php"],
+    "psr-4": {
+      "Magepow\\Layerednav\\": ""
+    }
+  },
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "extra": {
+    "map": [
+      [
+        "*",
+        "Magepow/Layerednav"
+      ]
+    ]
+  }
+}
