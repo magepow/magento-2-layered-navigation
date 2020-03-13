@@ -7,7 +7,7 @@
  *  * @license     http://www.magepow.com/license-agreement.html
  *  * @Author: DavidDuong
  *  * @@Create Date: 4/16/19 3:12 PM
- *  * @@Modify Date: 4/16/19 3:12 PM
+ *  * @@Modify Date: 3/13/20 3:12 PM
  *
  *
  */
@@ -31,8 +31,8 @@
         <ol class="items">
             <?php foreach ($_filters as $_filter): ?>
                 <li class="item">
-                    <span class="filter-label"><?php echo $block->escapeHtml(__($_filter->getName())); ?></span>
-                    <span class="filter-value"><?php /* @escapeNotVerified */ echo $block->stripTags($_filter->getLabel()) ?></span>
+                    <span class="filter-label" attribute-code="<?php echo $_filter->getFilter()->getRequestVar() ?>" ><?php echo $block->escapeHtml(__($_filter->getName())); ?></span>
+                    <span class="filter-value" option-id='<?php echo is_array($_filter->getValue()) ? json_encode($_filter->getValue()) :$_filter->getValue() ?>'><?php /* @escapeNotVerified */ echo $block->stripTags($_filter->getLabel()) ?></span>
                     <?php
                     $clearLinkUrl = $_filter->getClearLinkUrl();
                     $currentFilterName = $block->escapeHtml(__($_filter->getName())) . " " . $block->stripTags($_filter->getLabel());

@@ -6,7 +6,7 @@
  *  * @license     http://www.magepow.com/license-agreement.html
  *  * @Author: DavidDuong
  *  * @@Create Date: 4/16/19 3:15 PM
- *  * @@Modify Date: 6/2/19 3:14 PM
+ *  * @@Modify Date: 3/13/20 3:14 PM
  *
  *
  */
@@ -29,6 +29,7 @@ define([
             this.initObserve();
             this.initProductList();
             this.initClickShopBy();
+            this.filterActive();
         },
 
         initObserve: function () {
@@ -166,6 +167,7 @@ define([
                     $("html, body").animate({ scrollTop: 0 }, "slow");
 
                     $('.layered_overlay').hide();
+                    self.filterActive();
                 },
                 error: function () {
                     window.location.reload();
@@ -176,7 +178,17 @@ define([
             var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/; 
 
             return regex.test(url) ? url : null;
-        }
+        },
+        filterActive: function () {
+            var filterCurrent = $('.filter-current .items .item');
+            var filterOptions = $('.filter-options');
+            filterCurrent.each(function() {
+                var code = $(this).find('.filter-label').attr('attribute-code');
+                var value = $(this).find('.filter-value').attr('option-id');
+                var option = filterOptions.find( '.swatch-attribute[attribute-code="' + code + '"]' + " .swatch-option[option-id='" + value + "']" );
+                if(option.length) option.addClass('selected');
+            });
+        }        
     });
 
     return $.magepow.layerednav;
