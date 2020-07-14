@@ -6,7 +6,7 @@
  *  * @license     http://www.magepow.com/license-agreement.html
  *  * @Author: DavidDuong
  *  * @@Create Date: 4/16/19 3:15 PM
- *  * @@Modify Date: 3/13/20 3:14 PM
+ *  * @@Modify Date: 7/14/20 3:14 PM
  *
  *
  */
@@ -145,7 +145,7 @@ define([
                 type: 'post',
                 dataType: 'json',
                 beforeSend: function () {
-                    $('.layered_overlay').show();
+                    $('body').trigger('processStart');
                     if (typeof window.history.pushState === 'function') {
                         window.history.pushState({url: submitUrl}, '', submitUrl);
                     }
@@ -166,7 +166,7 @@ define([
 
                     $("html, body").animate({ scrollTop: 0 }, "slow");
 
-                    $('.layered_overlay').hide();
+                    $('body').trigger('processStop');
                     self.filterActive();
                 },
                 error: function () {

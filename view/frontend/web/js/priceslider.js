@@ -6,7 +6,7 @@
  *  * @license     http://www.magepow.com/license-agreement.html
  *  * @Author: DavidDuong
  *  * @@Create Date: 4/16/19 3:20 PM
- *  * @@Modify Date: 4/16/19 3:20 PM
+ *  * @@Modify Date: 7/14/20 3:20 PM
  *
  *
  */
@@ -14,8 +14,9 @@
 define([
     'jquery',
     'Magento_Catalog/js/price-utils',
-    'jquery/ui',
-    'Magepow_Layerednav/js/layerednav'
+    'Magepow_Layerednav/js/layerednav',
+    'jquery-ui-modules/slider',
+    'jquery-ui-modules/widget'
 ], function($, ultil) {
     "use strict";
 
@@ -27,7 +28,7 @@ define([
         _create: function () {
             var self = this;
             $(this.options.sliderElement).slider({
-				range: true,
+                range: true,
                 min: self.options.minValue,
                 max: self.options.maxValue,
                 values: [self.options.selectedFrom, self.options.selectedTo],

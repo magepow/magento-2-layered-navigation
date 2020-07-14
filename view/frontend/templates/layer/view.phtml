@@ -16,7 +16,7 @@
         <?php if ($filter->getItemsCount()): ?>
         <?php if (!$wrapOptions): ?>
             <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= /* @escapeNotVerified */ __('Shopping Options') ?></strong>
-            <div class="filter-options widget widget-filter" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "multipleCollapsible": true}}'>
+            <div class="filter-options widget widget-filter" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "active": false, "collapsible": true, "multipleCollapsible": true}}'>
                 <?php  $wrapOptions = true; endif; ?>
                 <?php 
                 //if($filter->getName() == 'Price'): ?>
@@ -26,8 +26,7 @@
                 </div>
                 <?php
                 //endif;
-                $activeArray[] = $activeKey;
-                $activeKey++;
+                $activeArray[] = $activeKey++;
                 ?>
                 <?php endif; ?>
                 <?php endforeach; ?>
@@ -46,9 +45,6 @@
                 }
             </script>
         <?php endif; ?>
-        </div>
-        <div id="layered_overlay" class="layered_overlay">
-            <div><img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>" alt="<?php echo __('Loading') ?>"></div>
         </div>
     </div>
 <?php endif; ?>
