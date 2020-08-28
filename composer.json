@@ -1,6 +1,9 @@
 {
   "name": "magepow/layerednav",
   "description": "Magento 2 Advanced Layered Navigation Ajax",
+  "require": {
+    "magepow/core": "^1.0.0"
+  },
   "type": "magento2-module",
   "autoload": {
     "files": ["registration.php"],
