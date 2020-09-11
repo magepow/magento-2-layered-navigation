@@ -110,6 +110,9 @@ define([
                     if (paramValue == defaultValue) {
                         delete paramData[paramName];
                     }
+                    if (paramName == 'product_list_limit') {
+                        delete paramData['p'];
+                    }
                     paramData = $.param(paramData);
 
                     self.ajaxSubmit(baseUrl + (paramData.length ? '?' + paramData : '')); 
