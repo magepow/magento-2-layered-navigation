@@ -114,8 +114,12 @@ define([
                         delete paramData['p'];
                     }
                     paramData = $.param(paramData);
-
-                    self.ajaxSubmit(baseUrl + (paramData.length ? '?' + paramData : '')); 
+                    var nextUrl = baseUrl + (paramData.length ? '?' + paramData : '');
+                    if ($('body').hasClass('infinitescroll') && paramName == 'product_list_mode') {
+                        window.location.href = nextUrl;
+                    } else {
+                        self.ajaxSubmit(nextUrl); 
+                    }
                 }else{
                     running = true;
                 }
