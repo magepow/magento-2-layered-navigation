@@ -20,7 +20,7 @@ php bin/magento setup:static-content:deploy -f
   ## Install manual
   
 * extract file from archive
-* deploy file into Magento2 folder `app/code/magepow/layerednav`. Run following commands
+* deploy file into Magento2 folder `app/code/Magepow/Layerednav`. Run following commands
 
  ```
  php bin/magento setup:upgrade
