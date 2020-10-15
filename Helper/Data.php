@@ -14,54 +14,64 @@
 
 namespace Magepow\Layerednav\Helper;
 
-use Magento\Framework\App\Helper\AbstractHelper;
-use Magento\Store\Model\StoreManagerInterface;
-use Magento\Framework\ObjectManagerInterface;
-use Magento\Framework\App\Helper\Context;
-use Magento\Store\Model\ScopeInterface;
-
-class Data extends AbstractHelper
+class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-    protected $storeManager;
 
-    protected $objectManager;
+    /**
+     * @var array
+     */
+    protected $configModule;
 
     public function __construct(
-        Context $context,
-        ObjectManagerInterface $objectManager,
-        StoreManagerInterface $storeManager
+        \Magento\Framework\App\Helper\Context $context
     )
     {
-        $this->objectManager   = $objectManager;
-        $this->storeManager    = $storeManager;
         parent::__construct($context);
+        $this->configModule = $this->getConfig(strtolower($this->_getModuleName()));
     }
 
-    public function isEnabled($storeId = null)
+    public function getConfig($cfg='')
     {
-        return $this->scopeConfig->getValue(
-            'layered_ajax/general/enable',
-            ScopeInterface::SCOPE_STORE,
-            $storeId
-        );
+        if($cfg) return $this->scopeConfig->getValue( $cfg, \Magento\Store\Model\ScopeInterface::SCOPE_STORE );
+        return $this->scopeConfig;
     }
 
-    public function isEnabledPriceRangeSliders($storeId = null)
+    public function getConfigModule($cfg='', $value=null)
     {
-        return $this->scopeConfig->getValue(
-            'layered_ajax/general/price_slider',
-            ScopeInterface::SCOPE_STORE,
-            $storeId
-        );
+        $values = $this->configModule;
+        if( !$cfg ) return $values;
+        $config  = explode('/', $cfg);
+        $end     = count($config) - 1;
+        foreach ($config as $key => $vl) {
+            if( isset($values[$vl]) ){
+                if( $key == $end ) {
+                    $value = $values[$vl];
+                }else {
+                    $values = $values[$vl];
+                }
+            } 
+
+        }
+        return $value;
     }
 
-
-    public function isEnabledShowAllFilters($storeId = null)
+    public function isEnabled()
     {
-        return $this->scopeConfig->getValue(
-            'layered_ajax/general/show_filters',
-            ScopeInterface::SCOPE_STORE,
-            $storeId
-        );
+        return $this->getConfigModule('general/enabled');
+    }
+
+    public function isEnabledPriceRangeSliders()
+    {
+        return $this->getConfigModule('general/price_slider');
+    }
+
+    public function isEnabledShowAllFilters()
+    {
+        return $this->getConfigModule('general/show_filters');
+    }
+    
+    public function isEnabledStickySidebar()
+    {
+        return $this->getConfigModule('general/sticky_sidebar');
     }
 }

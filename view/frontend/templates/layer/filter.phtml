@@ -1,7 +1,11 @@
 <ol class="items">
     <?php 
-        $blockObj= $block->getLayout()->createBlock('Magepow\Layerednav\Block\Layerednav');
-        $RangePrice = $blockObj->getCurrentCategoryMaxPrice();
+        $blockLayered = $block->getLayout()->createBlock('Magepow\Layerednav\Block\Layerednav');
+        $RangePrice   = $blockLayered->getCurrentCategoryMaxPrice();
+        $helper       = $this->helper('Magepow\Layerednav\Helper\Data');
+        $jsonHelper   = $this->helper('Magento\Framework\Json\Helper\Data');
+        $priceFormat  = $this->helper('Magento\Tax\Helper\Data')->getPriceFormat($block->getStore());
+        $showCount    = $this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer();
     ?>
     <?php foreach ($filterItems as $filterItem): ?>
         <?php
@@ -13,7 +17,7 @@
         $url = in_array($filterItem->getValue(), $requestArray) ? $filterItem->getRemoveUrl() : $filterItem->getUrl();
         ?>
         <li class="item">
-            <?php if($this->helper('Magepow\Layerednav\Helper\Data')->isEnabledPriceRangeSliders() && $attributeModel && $attributeModel->getFrontendInput() == 'price'): ?>
+            <?php if($helper->isEnabledPriceRangeSliders() && $attributeModel && $attributeModel->getFrontendInput() == 'price'): ?>
                 <?php
                 $min = $RangePrice['min'];
                 $max = $RangePrice['max'];
@@ -32,8 +36,8 @@
                                 "selectedTo": <?php echo $to ?>,
                                 "minValue": <?php echo $RangePrice['min']; ?>,
                                 "maxValue": <?php echo $RangePrice['max']; ?>,
-                                "priceFormat": <?php echo $this->helper('Magento\Tax\Helper\Data')->getPriceFormat($block->getStore()); ?>,
-                                "ajaxUrl": <?php echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($filterItem->getUrl()) ?>
+                                "priceFormat": <?php echo $priceFormat; ?>,
+                                "ajaxUrl": <?php echo $jsonHelper->jsonEncode($filterItem->getUrl()) ?>
                             }
                         }
                     }
@@ -46,7 +50,7 @@
                         <input type="checkbox" <?php echo in_array($filterItem->getValue(), $requestArray) ? 'checked="checked"' : ''  ?> />
                     <?php endif; ?>
                     <?php echo $filterItem->getLabel() ?>
-                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                    <?php if ($showCount): ?>
                         <span class="count"><?php echo $filterItem->getCount()?><span class="filter-count-label">
 								<?php if ($filterItem->getCount() == 1):?> <?php echo __('item')?><?php else:?> <?php echo __('items') ?><?php endif;?></span></span>
                     <?php endif; ?>
@@ -56,7 +60,7 @@
             <input type="checkbox" disabled="disabled" />
             <?php endif; ?>
                 <?php echo $filterItem->getLabel() ?>
-                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                <?php if ($showCount): ?>
                 <span class="count"><?php echo $filterItem->getCount()?><span class="filter-count-label">
 							<?php if ($filterItem->getCount() == 1):?><?php echo __('item')?><?php else:?><?php echo __('items') ?><?php endif;?></span></span>
             <?php endif; ?>

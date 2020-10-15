@@ -13,7 +13,8 @@
 define([
     'jquery',
     'jquery/ui',
-    'productListToolbarForm'
+    'productListToolbarForm',
+    'mage/sticky'
 ], function ($) {
     "use strict";
 
@@ -22,7 +23,8 @@ define([
 
         options: {
             productsListSelector: '#layerednav-list-products',
-            navigationSelector: '#layerednav-filter-block'
+            navigationSelector: '#layerednav-filter-block',
+            stickySidebar: true
         },
 
         _create: function () {
@@ -30,6 +32,7 @@ define([
             this.initProductList();
             this.initClickShopBy();
             this.filterActive();
+            this.stickySidebar();
         },
 
         initObserve: function () {
@@ -181,11 +184,13 @@ define([
                 }
             });
         },
+
         ValidateUrl: function (url) {
             var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/; 
 
             return regex.test(url) ? url : null;
         },
+
         filterActive: function () {
             var filterCurrent = $('.filter-current .items .item');
             var filterOptions = $('.filter-options');
@@ -195,7 +200,35 @@ define([
                 var option = filterOptions.find( '.swatch-attribute[attribute-code="' + code + '"]' + " .swatch-option[option-id='" + value + "']" );
                 if(option.length) option.addClass('selected');
             });
-        }        
+        },
+
+        stickySidebar: function ()  {
+            var self = this;
+            if(!self.options.stickySidebar) return;
+            
+            if (!$('body').hasClass('page-layout-3columns')) {
+                if (!$('body').hasClass('sticky')) {
+                    $('.sidebar').wrapAll( "<div class='sidebar-wrap sidebar-main sidebar'/>");
+                    $('body').addClass('sticky');
+                }
+                $('body').on('contentUpdated', function(){
+                    setTimeout(function(){ $(window).trigger('resize'); }, 1000);
+                });
+                $('.sidebar-wrap').sticky ({
+                    container: '.columns, .alocolumns',
+                    spacingTop: function () {
+                        return ($('.header-sticker').outerHeight() + 15);
+                    }
+                });
+            } else {
+                $('.sidebar').mage('sticky', {
+                    container: '.columns, .alocolumns',
+                    spacingTop: function () {
+                        return ($('.header-sticker').outerHeight() + 15);
+                    }
+                });
+            }
+        }
     });
 
     return $.magepow.layerednav;

@@ -14,12 +14,13 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
     <default>
-        <layered_ajax>
+        <magepow_layerednav>
             <general>
-                <enable>1</enable>
+                <enabled>1</enabled>
                 <price_slider>1</price_slider>
                 <show_filters>1</show_filters>
+                <sticky_sidebar>1</sticky_sidebar>
             </general>
-        </layered_ajax>
+        </magepow_layerednav>
     </default>
 </config>
