@@ -168,13 +168,15 @@ define([
                     }
                     if (data.navigation) {
                         $(self.options.navigationSelector).replaceWith(data.navigation);
+                        $(self.options.navigationSelector).trigger('contentUpdated');
                     }
                     if (data.products) {
                         $(self.options.productsListSelector).replaceWith(data.products);
+                        $(self.options.productsListSelector).trigger('contentUpdated');
                     }
 
                     $("html, body").animate({ scrollTop: 0 }, "slow", function (){
-                        $('body').trigger('contentUpdated');
+                        // $('body').trigger('contentUpdated');
                     });
                     $('.swatch-option-tooltip').hide();
                     $('body').trigger('processStop');
