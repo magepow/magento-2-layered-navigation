@@ -174,7 +174,7 @@ define([
                     }
 
                     $("html, body").animate({ scrollTop: 0 }, "slow", function (){
-                        // $('body').trigger('contentUpdated');
+                        $('body').trigger('contentUpdated');
                     });
                     $('.swatch-option-tooltip').hide();
                     $('body').trigger('processStop');
