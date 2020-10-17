@@ -48,7 +48,8 @@ define([
                 var stuck = this.element.hasClass(this.options.stickyClass);
 
                 $('body').on('contentUpdated', function(){
-                    setTimeout(function(){ self.reset(); }, 1000);
+                    element.css(resetSticky); 
+                    sidebarAdditional.css(resetSticky);
                 });
 
                 this.element.toggleClass(this.options.stickyClass, offset >= 0);
