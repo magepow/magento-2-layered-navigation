@@ -48,7 +48,21 @@
                         <span><?php echo $block->escapeHtml($_filter->getFilter()->getClearLinkText()) ?></span>
                     </a>
                 <?php else: ?>
-                    <a class="action remove" href="<?php /* @escapeNotVerified */ echo $_filter->getRemoveUrl() ?>"
+                    <?php
+                        $removeUrl = $_filter->getRemoveUrl();
+                        if($_filter->getFilter()->getRequestVar() == 'price'){
+                            $url = $_filter->getRemoveUrl();
+                            $url = html_entity_decode($url);
+                            $removeParam = strtok($url, '?');
+                            $parseUrl = parse_url($url);
+                            $query = $parseUrl['query'];
+                            parse_str($query, $array);
+                            unset($array['price']);
+                            $queryNotPrice = http_build_query($array);
+                            $removeUrl = $removeParam.'?'.$queryNotPrice;
+                        }
+                    ?>                        
+                    <a class="action remove" href="<?php /* @escapeNotVerified */ echo $removeUrl ?>"
                        title="<?php /* @escapeNotVerified */ echo $block->escapeHtml(__('Remove')) . " " . $currentFilterName;?>">
                         <span><i class="fa fa-times" aria-hidden="true"></i></span>
                     </a>
