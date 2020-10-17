@@ -31,17 +31,17 @@ define([
                 var sidebarHeight           = is3columns ? element.outerHeight() : element.outerHeight() + sidebarAdditional.outerHeight();
                 var sidebarAdditionalTop    = is3columns ? this._getOptionValue('spacingTop') : element.outerHeight() - accordion.height();
                 var columnMain              = maincontent.find('.column.main');
-                var columnMainHeight        = columnMain.height();
+                var columnMainHeight        = columnMain.outerHeight();
                 var offset                  = $(document).scrollTop();
-                var resetSticky = {'position': '','top': '','bottom': ''};
+                var resetSticky = {'position': '','width': '','top': '','bottom': ''};
                 if(sidebarHeight >= columnMainHeight){
                     element.css(resetSticky); 
                     sidebarAdditional.css(resetSticky);
                     return;
                 }
                 var columnMainTop           = columnMain.offset().top + this._getOptionValue('spacingTop');
-                var columnMainBottom        = columnMainHeight;
-                var isBottom                = (offset > columnMainBottom - accordion.outerHeight());
+                var columnMainBottom        = columnMainTop + columnMainHeight;
+                var isBottom                = (offset + sidebarHeight - accordion.outerHeight() > columnMainBottom);
                 var isFixed                 = (offset > columnMainTop && !isBottom);
                 if(!this.sidebarAdditionalWidth) this.sidebarAdditionalWidth = sidebarAdditional.outerWidth();
                 if(!this.sidebarMainWidth) this.sidebarMainWidth = $(this.element).outerWidth();
@@ -71,11 +71,13 @@ define([
                 } else if(isBottom){
                     this.element.css({
                         'position': 'absolute',
+                        'width': '',
                         'top': 'auto',
                         'bottom': sidebarAdditional.outerHeight()
                     });
                     sidebarAdditional.css({
                         'position': 'absolute',
+                        'width': '',
                         'top': 'auto',
                         'bottom': '0px',                        
                     });                      
