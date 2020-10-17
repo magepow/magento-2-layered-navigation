@@ -45,7 +45,10 @@
                             "active": <?php echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($activeArray); ?>
                         },
                     <?php endif; ?>
-                    "Magepow_Layerednav/js/layerednav": {"stickySidebar": <?php echo $helper->isEnabledStickySidebar() ?> }
+                    "Magepow_Layerednav/js/layerednav": {
+                        "stickySidebar": <?php echo $helper->isEnabledStickySidebar() ?>,
+                        "stickyTop": <?php echo $helper->getConfigModule('general/sticky_top') ?> 
+                    }
                 }
             }
         </script>

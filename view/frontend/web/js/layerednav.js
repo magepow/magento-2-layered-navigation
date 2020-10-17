@@ -14,7 +14,7 @@ define([
     'jquery',
     'jquery/ui',
     'productListToolbarForm',
-    'mage/sticky'
+    'Magepow_Layerednav/js/stickysidebar'
 ], function ($) {
     "use strict";
 
@@ -24,7 +24,8 @@ define([
         options: {
             productsListSelector: '#layerednav-list-products',
             navigationSelector: '#layerednav-filter-block',
-            stickySidebar: true
+            stickySidebar: true,
+            stickyTop: 0,
         },
 
         _create: function () {
@@ -167,14 +168,14 @@ define([
                     }
                     if (data.navigation) {
                         $(self.options.navigationSelector).replaceWith(data.navigation);
-                        $(self.options.navigationSelector).trigger('contentUpdated');
                     }
                     if (data.products) {
                         $(self.options.productsListSelector).replaceWith(data.products);
-                        $(self.options.productsListSelector).trigger('contentUpdated');
                     }
 
-                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                    $("html, body").animate({ scrollTop: 0 }, "slow", function (){
+                        // $('body').trigger('contentUpdated');
+                    });
                     $('.swatch-option-tooltip').hide();
                     $('body').trigger('processStop');
                     self.filterActive();
@@ -205,29 +206,19 @@ define([
         stickySidebar: function ()  {
             var self = this;
             if(!self.options.stickySidebar) return;
-            
-            if (!$('body').hasClass('page-layout-3columns')) {
-                if (!$('body').hasClass('sticky')) {
-                    $('.sidebar').wrapAll( "<div class='sidebar-wrap sidebar-main sidebar'/>");
-                    $('body').addClass('sticky');
-                }
-                $('body').on('contentUpdated', function(){
-                    setTimeout(function(){ $(window).trigger('resize'); }, 1000);
-                });
-                $('.sidebar-wrap').sticky ({
-                    container: '.columns, .alocolumns',
-                    spacingTop: function () {
-                        return ($('.header-sticker').outerHeight() + 15);
-                    }
-                });
-            } else {
-                $('.sidebar').mage('sticky', {
-                    container: '.columns, .alocolumns',
-                    spacingTop: function () {
-                        return ($('.header-sticker').outerHeight() + 15);
-                    }
-                });
+            var sidebar = $('.sidebar.sidebar-main');
+            if(self.options.stickyTop){
+                sidebar.data('sticky_top', self.options.stickyTop);
             }
+            sidebar.stickySidebar ({
+                container: '.columns, .alocolumns',
+                spacingTop: function () {
+                    var stickyTop = $(this.element).data('sticky_top');
+                    var height = stickyTop ? stickyTop : $('.header-container-fixed').outerHeight();
+                    if(!height) height = $('.header-container-fixed .magicmenu').outerHeight();
+                    return height;
+                }
+            });
         }
     });
 

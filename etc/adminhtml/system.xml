@@ -19,23 +19,20 @@
                 <field id="price_slider" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Use Price Range Sliders</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="enable">1</field>
-                    </depends>
                 </field>
                 <field id="show_filters" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show All Filters</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="enable">1</field>
-                    </depends>
                 </field>
                 <field id="sticky_sidebar" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Sticky sidebar</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="enable">1</field>
-                    </depends>
+                </field>
+                <field id="sticky_top" translate="label comment" type="text" sortOrder="110"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Space top</label>
+                    <comment>Space sticky on top 0 will is auto</comment>
+                    <validate>validate-digits validate-zero-or-greater</validate>
+                    <depends><field id="sticky_sidebar">1</field></depends>
                 </field>
             </group>
         </section>
