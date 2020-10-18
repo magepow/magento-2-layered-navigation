@@ -1,15 +1,10 @@
 /*
- * *
- *  * Magepow
- *  * @category    Magepow
- *  * @copyright   Copyright (c) 2014 Magepow (http://www.magepow.com/)
- *  * @license     http://www.magepow.com/license-agreement.html
- *  * @Author: DavidDuong
- *  * @@Create Date: 4/16/19 3:15 PM
- *  * @@Modify Date: 7/14/20 3:14 PM
- *
- *
- */
+* @Author: Alex Dong
+* @Date:   2020-10-17 23:20:18
+* @Last Modified by:   Alex Dong
+* @Last Modified time: 2020-10-18 08:29:04
+*/
+
 define([
     'jquery',
     'jquery/ui',
@@ -45,6 +40,7 @@ define([
                 var isFixed                 = (offset > columnMainTop && !isBottom);
                 if(!this.sidebarAdditionalWidth) this.sidebarAdditionalWidth = sidebarAdditional.outerWidth();
                 if(!this.sidebarMainWidth) this.sidebarMainWidth = $(this.element).outerWidth();
+                if(!this.sidebarMainPadding) this.sidebarMainPadding = element.css('padding-top') + ' ' + element.css('padding-right') + ' ' + element.css('padding-bottom') + ' ' + element.css('padding-left');
                 var stuck = this.element.hasClass(this.options.stickyClass);
 
                 $('body').on('contentUpdated', function(){
@@ -58,10 +54,10 @@ define([
                     this.element.css({
                         'top': this._getOptionValue('spacingTop') - accordion.outerHeight(),
                         'width': this.sidebarMainWidth,
+                        'padding': this.sidebarMainPadding,
                         'position': 'fixed',
                         'bottom': ''
                     });
-                    
                     sidebarAdditional.css({
                         'top': sidebarAdditionalTop,
                         'width': this.sidebarAdditionalWidth,
