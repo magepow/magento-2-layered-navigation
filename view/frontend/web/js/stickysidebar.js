@@ -2,7 +2,7 @@
 * @Author: Alex Dong
 * @Date:   2020-10-17 23:20:18
 * @Last Modified by:   Alex Dong
-* @Last Modified time: 2020-10-18 08:29:04
+* @Last Modified time: 2020-10-20 15:39:35
 */
 
 define([
@@ -24,7 +24,7 @@ define([
                 var sidebarAdditional       = maincontent.find('.sidebar-additional');
                 var is3columns              = $('body').hasClass('page-layout-3columns');
                 var sidebarHeight           = is3columns ? element.outerHeight() : element.outerHeight() + sidebarAdditional.outerHeight();
-                var sidebarAdditionalTop    = is3columns ? this._getOptionValue('spacingTop') : element.outerHeight() - accordion.height();
+                var sidebarAdditionalTop    = is3columns ? this._getOptionValue('spacingTop') : this._getOptionValue('spacingTop') + element.outerHeight() - accordion.outerHeight();
                 var columnMain              = maincontent.find('.column.main');
                 var columnMainHeight        = columnMain.outerHeight();
                 var offset                  = $(document).scrollTop();
