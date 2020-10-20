@@ -2,7 +2,7 @@
 * @Author: Alex Dong
 * @Date:   2020-10-17 23:20:18
 * @Last Modified by:   Alex Dong
-* @Last Modified time: 2020-10-20 15:39:35
+* @Last Modified time: 2020-10-20 17:25:03
 */
 
 define([
@@ -69,7 +69,7 @@ define([
                         'position': 'absolute',
                         'width': '',
                         'top': 'auto',
-                        'bottom': sidebarAdditional.outerHeight()
+                        'bottom': this._getOptionValue('spacingTop') + sidebarAdditional.outerHeight()
                     });
                     sidebarAdditional.css({
                         'position': 'absolute',
