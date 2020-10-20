@@ -2,7 +2,7 @@
 * @Author: Alex Dong
 * @Date:   2020-10-17 23:20:18
 * @Last Modified by:   Alex Dong
-* @Last Modified time: 2020-10-20 17:25:03
+* @Last Modified time: 2020-10-20 18:24:28
 */
 
 define([
@@ -23,10 +23,10 @@ define([
                 var accordion               = $(this.element).find('.accordion-container');
                 var sidebarAdditional       = maincontent.find('.sidebar-additional');
                 var is3columns              = $('body').hasClass('page-layout-3columns');
-                var sidebarHeight           = is3columns ? element.outerHeight() : element.outerHeight() + sidebarAdditional.outerHeight();
-                var sidebarAdditionalTop    = is3columns ? this._getOptionValue('spacingTop') : this._getOptionValue('spacingTop') + element.outerHeight() - accordion.outerHeight();
+                var sidebarHeight           = is3columns ? element.outerHeight(true) : element.outerHeight(true) + sidebarAdditional.outerHeight(true);
+                var sidebarAdditionalTop    = is3columns ? this._getOptionValue('spacingTop') : this._getOptionValue('spacingTop') + element.outerHeight(true) - accordion.outerHeight(true);
                 var columnMain              = maincontent.find('.column.main');
-                var columnMainHeight        = columnMain.outerHeight();
+                var columnMainHeight        = columnMain.outerHeight(true);
                 var offset                  = $(document).scrollTop();
                 var resetSticky = {'position': '','width': '','top': '','bottom': ''};
                 if(sidebarHeight >= columnMainHeight){
@@ -36,10 +36,10 @@ define([
                 }
                 var columnMainTop           = columnMain.offset().top + this._getOptionValue('spacingTop');
                 var columnMainBottom        = columnMainTop + columnMainHeight;
-                var isBottom                = (offset + sidebarHeight - accordion.outerHeight() > columnMainBottom);
+                var isBottom                = (offset + sidebarHeight - accordion.outerHeight(true) > columnMainBottom);
                 var isFixed                 = (offset > columnMainTop && !isBottom);
-                if(!this.sidebarAdditionalWidth) this.sidebarAdditionalWidth = sidebarAdditional.outerWidth();
-                if(!this.sidebarMainWidth) this.sidebarMainWidth = $(this.element).outerWidth();
+                if(!this.sidebarAdditionalWidth) this.sidebarAdditionalWidth = sidebarAdditional.outerWidth(true);
+                if(!this.sidebarMainWidth) this.sidebarMainWidth = $(this.element).outerWidth(true);
                 if(!this.sidebarMainPadding) this.sidebarMainPadding = element.css('padding-top') + ' ' + element.css('padding-right') + ' ' + element.css('padding-bottom') + ' ' + element.css('padding-left');
                 var stuck = this.element.hasClass(this.options.stickyClass);
 
@@ -52,7 +52,7 @@ define([
                 sidebarAdditional.toggleClass(this.options.stickyClass, offset >= 0);
                 if( isFixed ){
                     this.element.css({
-                        'top': this._getOptionValue('spacingTop') - accordion.outerHeight(),
+                        'top': this._getOptionValue('spacingTop') - accordion.outerHeight(true),
                         'width': this.sidebarMainWidth,
                         'padding': this.sidebarMainPadding,
                         'position': 'fixed',
@@ -69,7 +69,7 @@ define([
                         'position': 'absolute',
                         'width': '',
                         'top': 'auto',
-                        'bottom': this._getOptionValue('spacingTop') + sidebarAdditional.outerHeight()
+                        'bottom': sidebarAdditional.outerHeight(true)
                     });
                     sidebarAdditional.css({
                         'position': 'absolute',
