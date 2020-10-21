@@ -2,7 +2,7 @@
 * @Author: Alex Dong
 * @Date:   2020-10-17 23:20:18
 * @Last Modified by:   Alex Dong
-* @Last Modified time: 2020-10-20 18:24:28
+* @Last Modified time: 2020-10-21 11:29:24
 */
 
 define([
@@ -23,6 +23,7 @@ define([
                 var accordion               = $(this.element).find('.accordion-container');
                 var sidebarAdditional       = maincontent.find('.sidebar-additional');
                 var is3columns              = $('body').hasClass('page-layout-3columns');
+                if(is3columns) return false;
                 var sidebarHeight           = is3columns ? element.outerHeight(true) : element.outerHeight(true) + sidebarAdditional.outerHeight(true);
                 var sidebarAdditionalTop    = is3columns ? this._getOptionValue('spacingTop') : this._getOptionValue('spacingTop') + element.outerHeight(true) - accordion.outerHeight(true);
                 var columnMain              = maincontent.find('.column.main');
