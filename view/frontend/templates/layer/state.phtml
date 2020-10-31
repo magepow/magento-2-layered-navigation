@@ -51,15 +51,16 @@
                     <?php
                         $removeUrl = $_filter->getRemoveUrl();
                         if($_filter->getFilter()->getRequestVar() == 'price'){
-                            $url = $_filter->getRemoveUrl();
-                            $url = html_entity_decode($url);
+                            $url = html_entity_decode($removeUrl);
                             $removeParam = strtok($url, '?');
                             $parseUrl = parse_url($url);
-                            $query = $parseUrl['query'];
-                            parse_str($query, $array);
-                            unset($array['price']);
-                            $queryNotPrice = http_build_query($array);
-                            $removeUrl = $removeParam.'?'.$queryNotPrice;
+                            if(isset($parseUrl['query'])){
+                                $query = $parseUrl['query'];
+                                parse_str($query, $array);
+                                unset($array['price']);
+                                $queryNotPrice = http_build_query($array);
+                                $removeUrl = $queryNotPrice ? $removeParam . '?' . $queryNotPrice : $removeParam;
+                            }
                         }
                     ?>                        
                     <a class="action remove" href="<?php /* @escapeNotVerified */ echo $removeUrl ?>"
