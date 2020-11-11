@@ -100,10 +100,10 @@ class Price extends AbstractFilter
         return $this;
     }
 
-    protected function _renderRangeLabel($fromPrice, $toPrice)
+    protected function _renderRangeLabel($fromPrice, $toPrice, $isLast = false)
     {
         if (!$this->_moduleHelper->isEnabled() || !$this->_moduleHelper->isEnabledPriceRangeSliders()) {
-            return parent::_renderRangeLabel($fromPrice, $toPrice);
+            return parent::_renderRangeLabel($fromPrice, $toPrice, $isLast);
         }
         $formattedFromPrice = $this->priceCurrency->format($fromPrice);
         if ($toPrice === '') {
