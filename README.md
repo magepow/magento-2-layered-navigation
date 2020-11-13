@@ -1,23 +1,36 @@
-# magento2-layerednav
-# Navigation Layered Ajax
-# rerequisites
+# Magento 2 Layered Navigation
 
+For an e-commerce website, Product navigation that simplifies the customer search process is essential. If a customer has trouble finding the product, they will abandon the shopping cart and you will lose a lead. 
+
+Magento Layered Navigation extension by Alothemes integrated Axaj technology that helps customers flexibly and easily navigate products without reloading pages. This extension allows customers to find the products they need exactly, quickly and helping to increase customer experience in your Magento store.
+
+## What is a Magento 2 Layered Navigation?
+Basically, Layered Navigation extension is a feature that makes it easy to find products based on category, price range, or any other available attribute. You can customize the product attributes, color and size to match your store. This extension equips your website with very flexible vertical and horizontal navigation, provides a richer user-experience for your customer and is particularly well-suited for stores that have a lot of variable products or products with a number of attributes.
+
+In the process of researching customer behavior on the Magento website, Alothemes has upgraded the layered navigation utility with many outstanding features:
+- Fully Responsive & Mobile Optimized
+- Integrated Ajax to quickly filter products without reloading pages.
+- Show price attribute slider
+- Professional and user-friendly interface
+- Simplify the customer search process
+- Sticky Sidebar helps the menu bar to remain steady when scrolling the product
+- Multil select in one filler lelp customers find products quickly & accurately
+
+## How to install Layered Navigation for Magento
 Before you continue, ensure you meet the following requirements:
-
-  * You have installed magento2
-  * You are using a Linux or Mac OS machine. Windows is not currently supported.
+  - You have installed magento2
+  - You are using a Linux or Mac OS machine. Windows is not currently supported.
   Install magento2-instagram extension
+### Step 1 : Download Magento 2 Layered Navigation Extension
 
-# Step 1 : Download Magento 2 Layered Navigation Extension
-
- ## Install via composer (recommend)
+ #### Install via composer (recommend)
 Run the following commands in Magento 2 root folder:
 ```
 composer require magepow/layerednav
 php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
-  ## Install manual
+  #### Install manual
   
 * extract file from archive
 * deploy file into Magento2 folder `app/code/Magepow/Layerednav`. Run following commands
@@ -28,9 +41,9 @@ php bin/magento setup:static-content:deploy -f
  php bin/magento cache:flush
  ```
 
-# Step 2: User guide
+### Step 2: User guide
 
-  ## 1. General configuration
+  #### 1. General configuration
 
   Login to magento admin, choose `stores->configuration->magepow->layered ajax`
   
@@ -38,7 +51,7 @@ php bin/magento setup:static-content:deploy -f
 
   Select `yes` to enable the module
   
-  ## 2. Details Configuration
+  #### 2. Details Configuration
   
    In `stores->configuration->magepow->layered ajax` we set: 
    * Use range price slider : Select `yes` to enable the price range and `no` to turn to the price of magento default.
@@ -49,7 +62,7 @@ php bin/magento setup:static-content:deploy -f
    ```
    php bin/magento cache:clean
    ```
-  ## 3. Result
+  #### 3. Result
    
    ![Image of magento store front](https://github.com/magepow/magento2-layerednav/blob/master/media/result_frontend.PNG)
    
