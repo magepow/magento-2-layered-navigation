@@ -64,17 +64,17 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 * [Magento 2 Categories Extension](https://alothemes.com/magento-categories-extension.html)
 
-* [Magento 2 Sticky Cart](https://magepow.com/magento-sticky-cart.html)
+* [Magento 2 Sticky Cart](https://alothemes.com/magento-sticky-cart.html)
 
 **Premium Extensions List**
 
-* [Magento 2 Pages Speed Optimizer](https://magepow.com/magento2-speed-optimizer.html)
+* [Magento 2 Pages Speed Optimizer](https://alothemes.com/magento2-speed-optimizer.html)
 
-* [Magento 2 Mutil Translate](https://magepow.com/magento-multi-translate.html)
+* [Magento 2 Mutil Translate](https://alothemes.com/magento-multi-translate.html)
 
-* [Magento 2 Instagram Integration](https://magepow.com/magento-2-instagram.html)
+* [Magento 2 Instagram Integration](https://alothemes.com/magento-2-instagram.html)
 
-* [Magento 2 Lookbook Pin Products](https://magepow.com/lookbook-pin-products.html)
+* [Magento 2 Lookbook Pin Products](https://alothemes.com/lookbook-pin-products.html)
 
 **Featured Magento Themes**
 
@@ -96,21 +96,21 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 **Featured Magento Services**
 
-* [PSD to Magento 2 Theme Conversion](https://magepow.com/psd-to-magento-theme-conversion.html)
+* [PSD to Magento 2 Theme Conversion](https://alothemes.com/psd-to-magento-theme-conversion.html)
 
-* [Magento Speed Optimization Service](https://magepow.com/magento-speed-optimization-service.html)
+* [Magento Speed Optimization Service](https://alothemes.com/magento-speed-optimization-service.html)
 
-* [Magento Security Patch Installation](https://magepow.com/magento-security-patch-installation.html)
+* [Magento Security Patch Installation](https://alothemes.com/magento-security-patch-installation.html)
 
-* [Magento Website Maintenance Service](https://magepow.com/website-maintenance-service.html)
+* [Magento Website Maintenance Service](https://alothemes.com/website-maintenance-service.html)
 
-* [Magento Professional Installation Service](https://magepow.com/professional-installation-service.html)
+* [Magento Professional Installation Service](https://alothemes.com/professional-installation-service.html)
 
-* [Magento Upgrade Service](https://magepow.com/magento-upgrade-service.html)
+* [Magento Upgrade Service](https://alothemes.com/magento-upgrade-service.html)
 
-* [Customization Service](https://magepow.com/customization-service.html)
+* [Customization Service](https://alothemes.com/customization-service.html)
 
-* [Hire Magento Developer](https://magepow.com/hire-magento-developer.html)
+* [Hire Magento Developer](https://alothemes.com/hire-magento-developer.html)
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/layerednav/v/stable)](https://packagist.org/packages/magepow/layerednav)
 [![Total Downloads](https://poser.pugx.org/magepow/layerednav/downloads)](https://packagist.org/packages/magepow/layerednav)
