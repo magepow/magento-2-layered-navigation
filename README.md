@@ -2,7 +2,7 @@
 
 Magento 2 Layered Navigation is a module that optimizes the navigation process, redirects users in the product catalog page, makes it easier to find products based on characteristics, price ranges, brands or any other configured attribute.
 
-Layered Navigation extension by Alothemes developed from the layered navigation version available of Magento. This extension allows more professional product navigation with Ajax layered navigation, user-friendly interface, Filter multiselect, Sticky sidebar, fully responsive & mobile optimized,...
+[Layered Navigation extension by Alothemes](https://alothemes.com/magento-2-layered-navigation.html) developed from the layered navigation version available of Magento. This extension allows more professional product navigation with Ajax layered navigation, user-friendly interface, Filter multiselect, Sticky sidebar, fully responsive & mobile optimized,...
 
 Before you continue, ensure you meet the following requirements:
 
