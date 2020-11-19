@@ -1,23 +1,24 @@
-# magento2-layerednav
-# Navigation Layered Ajax
-# rerequisites
+# Magento 2 Layered Navigation
+
+Magento 2 Layered Navigation is a module that optimizes the navigation process, redirects users in the product catalog page, makes it easier to find products based on characteristics, price ranges, brands or any other configured attribute.
+
+Layered Navigation extension by Alothemes developed from the layered navigation version available of Magento. This extension allows more professional product navigation with Ajax loading page, user-friendly interface, Filter multiselect, Sticky sidebar, fully responsive & mobile optimized,...
 
 Before you continue, ensure you meet the following requirements:
 
-  * You have installed magento2
+  * You have installed Magento2
   * You are using a Linux or Mac OS machine. Windows is not currently supported.
   Install magento2-instagram extension
 
-# Step 1 : Download Magento 2 Layered Navigation Extension
-
- ## Install via composer (recommend)
+## Step 1 : Download Magento 2 Layered Navigation Extension
+### Install via composer (recommend)
 Run the following commands in Magento 2 root folder:
 ```
 composer require magepow/layerednav
 php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
-  ## Install manual
+ ### Install manual
   
 * extract file from archive
 * deploy file into Magento2 folder `app/code/Magepow/Layerednav`. Run following commands
@@ -28,9 +29,9 @@ php bin/magento setup:static-content:deploy -f
  php bin/magento cache:flush
  ```
 
-# Step 2: User guide
+## Step 2: How to use Magento 2 Layered Navigation?
 
-  ## 1. General configuration
+  ### 1. General configuration
 
   Login to magento admin, choose `stores->configuration->magepow->layered ajax`
   
@@ -38,7 +39,7 @@ php bin/magento setup:static-content:deploy -f
 
   Select `yes` to enable the module
   
-  ## 2. Details Configuration
+  ### 2. Details Configuration
   
    In `stores->configuration->magepow->layered ajax` we set: 
    * Use range price slider : Select `yes` to enable the price range and `no` to turn to the price of magento default.
@@ -49,7 +50,7 @@ php bin/magento setup:static-content:deploy -f
    ```
    php bin/magento cache:clean
    ```
-  ## 3. Result
+  ### 3. Result
    
    ![Image of magento store front](https://github.com/magepow/magento2-layerednav/blob/master/media/result_frontend.PNG)
    
