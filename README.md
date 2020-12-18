@@ -9,6 +9,7 @@
 - Support filler with multi - select
 Layered Navigation extension Free allows customers to select one/several properties at a time to quickly find the product they need. The customer can combine the attributes 'Category' with 'Price', or 'Category', 'Size' and 'Price' or any other attributes of the product.
 
+![Image of magento 2 layered navigation muilt select](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magento2-layered-navigation-muilt-select.png?raw=true)
 
 - Option to delete product attributes
 In case the customer wants to remove one / several attributes or delete all at once, they can click on the 'X' or 'Clear All'.
@@ -20,8 +21,26 @@ In case the customer wants to remove one / several attributes or delete all at o
 ### Integrated Ajax technology for quick navigation
 Ajax has been widely used on websites thanks to its convenience and flexibility. Ajax technology allows the website to load part of the change instead of reloading the entire page, thus saving bandwidth and shortening customer waiting times.
 
+[Image of magento 2 layered navigation ajax](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magent2-layered-navigation-ajax.png?raw=true)
+
 ### User-friendly custom interface
 Designing a professional layered navigation extension layout helps increase the customer experience on the page, while also increasing sales for your store. Based on the research on customer behavior on e-commerce websites, Magepow team has optimized the interface by using Sticky Sidebar. When the customer scrolls down to see the product on the page, the Sticky Side helps to immobilize the attribute category section and disappears when the customer scrolls down the footer.
+
+[Image of magento 2 layered navigation sticky sidebar](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magento2-layered-navigation-sticky-sidebar.gif)
+
+### Features other
+- Professional price slider
+
+- Admin panel is easy to customize and configure
+
+- Responsive to all devices. It will calculate itself based on the original layout
+
+- 100% compatible with open source
+
+- Supports multiple stores with multiple languages
+
+- Nice interface with drop-down buttons and check- box
+
 
 ## How is install Magento 2 Layered Navigation extension Free
 Before you continue, ensure you meet the following requirements:
