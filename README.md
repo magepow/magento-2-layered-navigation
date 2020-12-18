@@ -1,6 +1,6 @@
 # Magento 2 Layered Navigation extension Free
 
-**Magento 2 Layered Navigation extension Free** developed by Magepow to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
+**Magento 2 Layered Navigation extension developed by Magepow** to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
 
 ## Highlight Features
 
@@ -21,12 +21,12 @@ In case the customer wants to remove one / several attributes or delete all at o
 ### Integrated Ajax technology for quick navigation
 Ajax has been widely used on websites thanks to its convenience and flexibility. Ajax technology allows the website to load part of the change instead of reloading the entire page, thus saving bandwidth and shortening customer waiting times.
 
-[Image of magento 2 layered navigation ajax](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magent2-layered-navigation-ajax.png?raw=true)
+![Image of magento 2 layered navigation ajax](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magent2-layered-navigation-ajax.png?raw=true)
 
 ### User-friendly custom interface
 Designing a professional layered navigation extension layout helps increase the customer experience on the page, while also increasing sales for your store. Based on the research on customer behavior on e-commerce websites, Magepow team has optimized the interface by using Sticky Sidebar. When the customer scrolls down to see the product on the page, the Sticky Side helps to immobilize the attribute category section and disappears when the customer scrolls down the footer.
 
-[Image of magento 2 layered navigation sticky sidebar](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magento2-layered-navigation-sticky-sidebar.gif)
+![Image of magento 2 layered navigation sticky sidebar](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magento2-layered-navigation-sticky-sidebar.gif)
 
 ### Features other
 - Professional price slider
