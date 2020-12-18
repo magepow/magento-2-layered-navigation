@@ -1,37 +1,47 @@
-# Magento 2 Layered Navigation
+# Magento 2 Layered Navigation extension Free
 
-Magento 2 Layered Navigation is a module that optimizes the navigation process, redirects users in the product catalog page, makes it easier to find products based on characteristics, price ranges, brands or any other configured attribute.
+**Magento 2 Layered Navigation extension Free** developed by Magepow to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
 
-[Layered Navigation extension by Alothemes](https://alothemes.com/magento-2-layered-navigation.html) developed from the layered navigation version available of Magento. This extension allows more professional product navigation with Ajax layered navigation, user-friendly interface, Filter multiselect, Sticky sidebar, fully responsive & mobile optimized,...
+## Highlight Features
 
+### Flexible navigation filters
+
+- Support filler with multi - select
+Layered Navigation extension Free allows customers to select one/several properties at a time to quickly find the product they need. The customer can combine the attributes 'Category' with 'Price', or 'Category', 'Size' and 'Price' or any other attributes of the product.
+
+
+- Option to delete product attributes
+In case the customer wants to remove one / several attributes or delete all at once, they can click on the 'X' or 'Clear All'.
+
+- Admin can customize properties in admin panel
+
+- Friendly interface with drop-down button and checkbox.
+
+### Integrated Ajax technology for quick navigation
+Ajax has been widely used on websites thanks to its convenience and flexibility. Ajax technology allows the website to load part of the change instead of reloading the entire page, thus saving bandwidth and shortening customer waiting times.
+
+### User-friendly custom interface
+Designing a professional layered navigation extension layout helps increase the customer experience on the page, while also increasing sales for your store. Based on the research on customer behavior on e-commerce websites, Magepow team has optimized the interface by using Sticky Sidebar. When the customer scrolls down to see the product on the page, the Sticky Side helps to immobilize the attribute category section and disappears when the customer scrolls down the footer.
+
+## How is install Magento 2 Layered Navigation extension Free
 Before you continue, ensure you meet the following requirements:
 
   * You have installed Magento2
   * You are using a Linux or Mac OS machine. Windows is not currently supported.
   Install magento2-instagram extension
 
-## Step 1 : Download Magento 2 Layered Navigation Extension
-### Install via composer (recommend)
+### Step 1 : Download Magento 2 Layered Navigation Extension
+#### Install via composer (recommend)
 Run the following commands in Magento 2 root folder:
 ```
 composer require magepow/layerednav
 php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
- ### Install manual
-  
-* extract file from archive
-* deploy file into Magento2 folder `app/code/Magepow/Layerednav`. Run following commands
 
- ```
- php bin/magento setup:upgrade
- php bin/magento setup:static-content:deploy -f
- php bin/magento cache:flush
- ```
+### Step 2: How to use Magento 2 Layered Navigation?
 
-## Step 2: How to use Magento 2 Layered Navigation?
-
-  ### 1. General configuration
+  1. General configuration
 
   Login to magento admin, choose `stores->configuration->magepow->layered ajax`
   
@@ -39,7 +49,7 @@ php bin/magento setup:static-content:deploy -f
 
   Select `yes` to enable the module
   
-  ### 2. Details Configuration
+  2. Details Configuration
   
    In `stores->configuration->magepow->layered ajax` we set: 
    * Use range price slider : Select `yes` to enable the price range and `no` to turn to the price of magento default.
