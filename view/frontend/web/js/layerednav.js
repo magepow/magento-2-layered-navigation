@@ -18,7 +18,6 @@ define([
 ], function ($) {
     "use strict";
 
-    var running = false;
     $.widget('magepow.layerednav', {
 
         options: {
@@ -96,36 +95,30 @@ define([
         initProductList: function () {
             var self = this;
             $.mage.productListToolbarForm.prototype.changeUrl = function (paramName, paramValue, defaultValue) {
-                if (running == true){
-                    running = false;
-                    
-                    var urlPaths = this.options.url.split('?'),
-                        baseUrl = urlPaths[0],
-                        urlParams = urlPaths[1] ? urlPaths[1].split('&') : [],
-                        paramData = {},
-                        parameters;
-                    for (var i = 0; i < urlParams.length; i++) {
-                        parameters = urlParams[i].split('=');
-                        paramData[parameters[0]] = parameters[1] !== undefined
-                            ? window.decodeURIComponent(parameters[1].replace(/\+/g, '%20'))
-                            : '';
-                    }
-                    paramData[paramName] = paramValue;
-                    if (paramValue == defaultValue) {
-                        delete paramData[paramName];
-                    }
-                    if (paramName == 'product_list_limit') {
-                        delete paramData['p'];
-                    }
-                    paramData = $.param(paramData);
-                    var nextUrl = baseUrl + (paramData.length ? '?' + paramData : '');
-                    if ($('body').hasClass('infinitescroll') && paramName == 'product_list_mode') {
-                        window.location.href = nextUrl;
-                    } else {
-                        self.ajaxSubmit(nextUrl); 
-                    }
-                }else{
-                    running = true;
+                var urlPaths = this.options.url.split('?'),
+                    baseUrl = urlPaths[0],
+                    urlParams = urlPaths[1] ? urlPaths[1].split('&') : [],
+                    paramData = {},
+                    parameters;
+                for (var i = 0; i < urlParams.length; i++) {
+                    parameters = urlParams[i].split('=');
+                    paramData[parameters[0]] = parameters[1] !== undefined
+                        ? window.decodeURIComponent(parameters[1].replace(/\+/g, '%20'))
+                        : '';
+                }
+                paramData[paramName] = paramValue;
+                if (paramValue == defaultValue) {
+                    delete paramData[paramName];
+                }
+                if (paramName == 'product_list_limit') {
+                    delete paramData['p'];
+                }
+                paramData = $.param(paramData);
+                var nextUrl = baseUrl + (paramData.length ? '?' + paramData : '');
+                if ($('body').hasClass('infinitescroll') && paramName == 'product_list_mode') {
+                    window.location.href = nextUrl;
+                } else {
+                    self.ajaxSubmit(nextUrl); 
                 }
             }
         },
