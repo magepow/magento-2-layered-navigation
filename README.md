@@ -2,6 +2,9 @@
 
 **Magento 2 Layered Navigation extension Free** developed by Magepow to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
 
+[![Latest Stable Version](https://poser.pugx.org/magepow/layerednav/v/stable)](https://packagist.org/packages/magepow/layerednav)
+[![Total Downloads](https://poser.pugx.org/magepow/layerednav/downloads)](https://packagist.org/packages/magepow/layerednav)
+
 ## Highlight Features
 
 ### Flexible navigation filters
@@ -150,5 +153,3 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 * [Hire Magento Developer](https://alothemes.com/hire-magento-developer.html)
 
-[![Latest Stable Version](https://poser.pugx.org/magepow/layerednav/v/stable)](https://packagist.org/packages/magepow/layerednav)
-[![Total Downloads](https://poser.pugx.org/magepow/layerednav/downloads)](https://packagist.org/packages/magepow/layerednav)
