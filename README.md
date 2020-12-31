@@ -1,11 +1,13 @@
-# Magento 2 Layered Navigation extension Free
+## Magento 2 Layered Navigation extension Free
 
-**Magento 2 Layered Navigation extension developed by Magepow** to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
+**Magento 2 Layered Navigation extension Free** developed by Magepow to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
 
 ## Highlight Features
 
 ### Flexible navigation filters
 
+### Highlight Features
+#### Flexible navigation filters
 - Support filler with multi - select
 Layered Navigation extension Free allows customers to select one/several properties at a time to quickly find the product they need. The customer can combine the attributes 'Category' with 'Price', or 'Category', 'Size' and 'Price' or any other attributes of the product.
 
@@ -18,17 +20,17 @@ In case the customer wants to remove one / several attributes or delete all at o
 
 - Friendly interface with drop-down button and checkbox.
 
-### Integrated Ajax technology for quick navigation
+#### Integrated Ajax technology for quick navigation
 Ajax has been widely used on websites thanks to its convenience and flexibility. Ajax technology allows the website to load part of the change instead of reloading the entire page, thus saving bandwidth and shortening customer waiting times.
 
 ![Image of magento 2 layered navigation ajax](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magent2-layered-navigation-ajax.png?raw=true)
 
-### User-friendly custom interface
+#### User-friendly custom interface
 Designing a professional layered navigation extension layout helps increase the customer experience on the page, while also increasing sales for your store. Based on the research on customer behavior on e-commerce websites, Magepow team has optimized the interface by using Sticky Sidebar. When the customer scrolls down to see the product on the page, the Sticky Side helps to immobilize the attribute category section and disappears when the customer scrolls down the footer.
 
 ![Image of magento 2 layered navigation sticky sidebar](https://github.com/magepow/magento2-layered-navigation/blob/master/media/magento2-layered-navigation-sticky-sidebar.gif)
 
-### Features other
+#### Features other
 - Professional price slider
 
 - Admin panel is easy to customize and configure
@@ -83,6 +85,12 @@ php bin/magento setup:static-content:deploy -f
    
    ![Image of magento store front](https://github.com/magepow/magento2-layerednav/blob/master/media/result_frontend.PNG)
    
+* [Demo frontend](http://demo.magepow.com/layerednav/women/tops-women.html)
+
+* [Demo backend](http://demo.magepow.com/layerednav/admin)
+
+* [Support](https://magepow.com/magento-2-layered-navigation-advanced.html)
+
  ## Donation
 
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
