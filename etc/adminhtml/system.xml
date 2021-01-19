@@ -9,7 +9,7 @@
             <class>separator-top</class>
             <label>Layered Ajax</label>
             <tab>magepow</tab>
-            <resource>Magepow_Layerednav::layered_ajax</resource>
+            <resource>Magepow_Layerednav::config</resource>
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Configuration</label>
                 <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">

@@ -6,7 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Magepow_Layerednav::layered_ajax" title="Layered Ajax"/>
+                            <resource id="Magepow_Layerednav::config" title="Layered Ajax"/>
                         </resource>
                     </resource>
                 </resource>
