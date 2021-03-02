@@ -19,7 +19,7 @@
                 <enabled>1</enabled>
                 <price_slider>1</price_slider>
                 <show_filters>1</show_filters>
-                <sticky_sidebar>1</sticky_sidebar>
+                <sticky_sidebar>0</sticky_sidebar>
                 <sticky_top>0</sticky_top>
             </general>
         </magepow_layerednav>
