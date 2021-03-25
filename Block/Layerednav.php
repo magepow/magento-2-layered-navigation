@@ -60,7 +60,7 @@ class Layerednav extends \Magento\Framework\View\Element\Template
             {
                 $min_price = $product->getMinPrice();
             }
-            $RangePrice['min'] = ceil($min_price);
+            $RangePrice['min'] = floor($min_price);
             return $RangePrice;
         } else {
             return false;
