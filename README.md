@@ -4,6 +4,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/layerednav/v/stable)](https://packagist.org/packages/magepow/layerednav)
 [![Total Downloads](https://poser.pugx.org/magepow/layerednav/downloads)](https://packagist.org/packages/magepow/layerednav)
+[![Daily Downloads](https://poser.pugx.org/magepow/layerednav/d/daily)](https://packagist.org/packages/magepow/layerednav)
 
 ### Highlight Features
 #### Flexible navigation filters
