@@ -88,15 +88,12 @@ class Price extends AbstractFilter
 
         list($from, $to) = $filter;
 
-        if($this->getCurrencyRate() > 0 && $this->getCurrencyRate()!= 1){
-            $from = $from / $this->getCurrencyRate();
-            $to = $to / $this->getCurrencyRate();
-        }
-        
+        $fromBase = $from/$this->getCurrencyRate();
+        $toBase = $to/$this->getCurrencyRate();
 
         $this->getLayer()->getProductCollection()->addFieldToFilter(
             'price',
-            ['from' => $from, 'to' => $to]
+            ['from' => $fromBase, 'to' => $toBase]
         );
 
         $this->getLayer()->getState()->addFilter(
