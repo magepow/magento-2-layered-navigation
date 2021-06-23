@@ -165,9 +165,6 @@ define([
                         /* Fix conflict infinitescroll */
                         window.ias.destroy();
                         // window.ias.bind();
-                        $('document').on("click", '.ias-trigger-next', function(e){
-                            $('.pages-item-next .next').trigger();
-                        });
                     }
                     if (data.backUrl) {
                         window.location = data.backUrl;
