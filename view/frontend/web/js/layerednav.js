@@ -110,10 +110,7 @@ define([
                             : '';
                     }
                     paramData[paramName] = paramValue;
-                    if (paramValue == defaultValue) {
-                        delete paramData[paramName];
-                    }
-                    if (paramName == 'product_list_limit') {
+                    if (paramName == 'product_list_mode') {
                         delete paramData['p'];
                     }
                     paramData = $.param(paramData);
