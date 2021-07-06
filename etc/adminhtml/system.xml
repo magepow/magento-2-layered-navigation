@@ -20,6 +20,13 @@
                     <label>Use Price Range Sliders</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="step" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Step unit Sliders</label>
+                    <comment>Price per unit</comment>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="price_slider">1</field></depends>
+                </field>
                 <field id="show_filters" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Expanded All Filters</label>
                     <comment>Choose "No" will collapsed all filters</comment>

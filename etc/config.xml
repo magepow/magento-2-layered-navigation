@@ -18,6 +18,7 @@
             <general>
                 <enabled>1</enabled>
                 <price_slider>1</price_slider>
+                <step>1</step>
                 <show_filters>1</show_filters>
                 <sticky_sidebar>0</sticky_sidebar>
                 <sticky_top>0</sticky_top>

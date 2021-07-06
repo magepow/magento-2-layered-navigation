@@ -36,6 +36,7 @@
                                 "selectedTo": <?php echo $to ?>,
                                 "minValue": <?php echo $RangePrice['min']; ?>,
                                 "maxValue": <?php echo $RangePrice['max']; ?>,
+                                "step": <?php echo $helper->getConfigModule('general/step'); ?>,
                                 "priceFormat": <?php echo $priceFormat; ?>,
                                 "ajaxUrl": <?php echo $jsonHelper->jsonEncode($filterItem->getUrl()) ?>
                             }
