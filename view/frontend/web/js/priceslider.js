@@ -31,6 +31,7 @@ define([
                 range: true,
                 min: self.options.minValue,
                 max: self.options.maxValue,
+                step: self.options.step,
                 values: [self.options.selectedFrom, self.options.selectedTo],
                 slide: function( event, ui ) {
                     self.displayText(ui.values[0], ui.values[1]);
