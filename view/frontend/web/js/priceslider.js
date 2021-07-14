@@ -16,7 +16,7 @@ define([
     'Magento_Catalog/js/price-utils',
     'Magepow_Layerednav/js/layerednav',
     'jquery-ui-modules/slider',
-    'jquery-ui-modules/widget'
+    'jquery/ui'
 ], function($, ultil) {
     "use strict";
 
