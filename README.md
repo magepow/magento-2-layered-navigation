@@ -1,3 +1,5 @@
+[<img src="https://github.com/magepow/themeforest/blob/master/shopify/shopify_affiliate.jpg" >](https://shopify.pxf.io/VyL446)
+
 ## Magento 2 Layered Navigation extension Free
 
 **Magento 2 Layered Navigation extension Free** developed by [Magepow](https://magepow.com/) to be improved from Magento's default version. This extension allows for more professional product navigation with Ajax technology, user-friendly interface, Multi-Choice Filters, Sticky Sidebar, fully responsive & optimized for mobile devices , ...
